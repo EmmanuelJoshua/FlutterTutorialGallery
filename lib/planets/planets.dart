@@ -39,6 +39,26 @@ class PlanetsState extends State<Planets> {
       body: ListView(
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(left: 45, top: 9),
+                height: 76,
+                color: Colors.transparent,
+                width: double.infinity,
+                child: Card(
+                  color: Color(0xFF534F8A),
+                  elevation: 2,
+                  margin: EdgeInsets.all(0),
+                ),
+              ),
+              Image.asset(
+                'assets/images/planets/mercury.png',
+                width: 95,
+                height: 95,
+              ),
+            ],
+          ),
           Card(
             //5%
             elevation: 0,

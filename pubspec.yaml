@@ -55,11 +55,6 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
-fonts:
-- family: PTsans
-  fonts:
-  - asset: assets/fonts/pt_sans.ttf
-    weight: 300
   assets:
     - assets/
     - assets/images/ps1.png
@@ -68,6 +63,7 @@ fonts:
     - assets/images/planet.png
     - assets/images/cover1.jpg
     - assets/images/cover.jpg
+    - assets/images/flower.jpg
     - assets/images/bars.png
     - assets/images/planets/mars.png
     - assets/images/planets/venus.png
@@ -102,6 +98,20 @@ fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-  #
+
+  fonts:
+  - family: PTsans
+    fonts:
+    - asset: assets/fonts/pt_sans.ttf
+      weight: 300
+
+  - family: Montserrat
+    fonts:
+    - asset: assets/fonts/montserrat_regular.ttf
+
+  - family: MontserratLight
+    fonts:
+    - asset: assets/fonts/montserrat_light.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

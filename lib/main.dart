@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_app/parsing_json/quakes.dart';
-import 'package:bmi_app/bmi_app/bmi.dart';
+import 'package:bmi_app/plant_app/plantapp.dart';
+import 'package:bmi_app/planets/planets.dart';
 
 void main() async {
   runApp(new MaterialApp(
-      color: Colors.red,
+    debugShowCheckedModeBanner: false,
+      color: Colors.blueGrey,
       title: "Tutorials",
-      home: Quakes()));
+      home: PlantApp()
+  )
+  );
 }
