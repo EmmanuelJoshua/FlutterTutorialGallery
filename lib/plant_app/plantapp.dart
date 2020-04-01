@@ -14,11 +14,42 @@ class _PlantAppState extends State<PlantApp> {
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
+          title: Text('Top Picks',
+              style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 20,
+                  fontFamily: 'Montserrat')),
           backgroundColor: Colors.white,
           leading: IconButton(
             onPressed: () {},
             icon: Icon(Icons.sort),
             color: Colors.black54,
+          ),
+          bottom: TabBar(
+            controller: TabController(length: 4, vsync: ScaffoldState()),
+            unselectedLabelColor: Colors.black38,
+            labelColor: Colors.black54,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorColor: Colors.black54,
+            tabs: [
+              Tab(child: Text('Top',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat'))),
+              Tab(child: Text('Latest',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat'))),
+              Tab(child: Text('Alpines',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat'))),
+              Tab(child: Text('Bed',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Montserrat'))),
+            ],
+
           ),
           actions: <Widget>[
             IconButton(
@@ -30,15 +61,7 @@ class _PlantAppState extends State<PlantApp> {
         ),
         backgroundColor: Colors.white,
         body: ListView(
-          padding: EdgeInsets.only(left: 18, right: 18),
           children: <Widget>[
-            Container(
-              child: Text('Top Picks',
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 28,
-                      fontFamily: 'Montserrat')),
-            ),
             InkWell(
               onTap: (){
                 var router = MaterialPageRoute(builder: (BuildContext context) => DisplayPage());
@@ -47,6 +70,7 @@ class _PlantAppState extends State<PlantApp> {
               },
               child: Container(
                 margin: EdgeInsets.only(top: 20),
+                padding: EdgeInsets.only(left: 18, right: 18),
                 height: 300,
                 child: Card(
                     elevation: 7,
@@ -116,6 +140,7 @@ class _PlantAppState extends State<PlantApp> {
               ),
             ),
             Container(
+              padding: EdgeInsets.only(left: 18, right: 10),
                 margin: EdgeInsets.only(top: 15, left: 8),
                 child: RichText(
                   text: TextSpan(text: '', children: [
@@ -139,7 +164,7 @@ class _PlantAppState extends State<PlantApp> {
             ),
             Divider(height: 0.1,),
             Container(
-              margin: EdgeInsets.only( left: 8),
+              margin: EdgeInsets.only( left: 10),
               child: RichText(
                 text: TextSpan(text: '', children: [
                   new TextSpan(children: [

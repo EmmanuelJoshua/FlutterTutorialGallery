@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -34,101 +35,32 @@ class _DisplayPageState extends State<DisplayPage> {
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(top: 100, right: 10, left: 10),
-                height: 420,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-                ),
-                child: Container(
-                  margin: EdgeInsets.only(top: 80, left: 15, right: 15),
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              Icon(
-                                Icons.style,
-                                color: Color(0xFF1D2427),
-                                size: 18,
-                              ),
-                              Text(
-                                'Quantity: 5',
-                                  style: TextStyle(
-                                      color: Color(0xFF1D2427),
-                                      fontSize: 16,
-                                      fontFamily: 'Montserrat'),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: Row(
-                              children: <Widget>[
-                                Icon(
-                                  Icons.attach_money,
-                                  color: Color(0xFF1D2427),
-                                  size: 18,
-                                ),
-                                Text(
-                                  'Price: 25 - 30',
-                                    style: TextStyle(
-                                        color: Color(0xFF1D2427),
-                                        fontSize: 16,
-                                        fontFamily: 'Montserrat'),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      Divider(),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                            'Spring Flower',
-                            style: TextStyle(
-                                color: Color(0xFF1D2427),
-                                fontSize: 18,
-                                fontFamily: 'Montserrat')),
-                      ),
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        child:  Text(
-                            'Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n',
-                            style: TextStyle(
 
-                                color: Color(0xFF1D2427),
-                                fontSize: 14,
-                                fontFamily: 'MontserratLight')),
-                      ),
-                      Column(
-                        children: <Widget>[
-//                          RaisedButton(
-//                              onPressed: (){},
-//                            child: new Text(
-//                              'Get Money',
-//                              style: new TextStyle(color: Colors.white, fontSize: 17.0),
-//                            ),
-//                            shape: RoundedRectangleBorder(
-//                                borderRadius: BorderRadius.circular(10)),
-//                          )
-                        ],
-                      )
-                    ],
-                  )
+              Container(
+                  margin: EdgeInsets.only(top: 100, right: 10, left: 10),
+                  height: 420,
+                  decoration: BoxDecoration(
+                    color: Colors.greenAccent,
+//                      image: DecorationImage(image: AssetImage('assets/images/flower.jpg'), fit: BoxFit.fill),
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                        sigmaX: 1.3,
+                        sigmaY: 1.3
+                    ),
+                    child: Container(
+                      color: Colors.white.withOpacity(0),
+                    ),
+                  ),
                 ),
-              ),
+
               Container(
                 margin: EdgeInsets.only(top: 15),
                 alignment: Alignment.topCenter,
                 child: Hero(
                   tag: 'image1',
                   child: Container(
-                    child: CustomPaint(
-                      painter: new CuPaint(),
                       child: ClipOval(
                         clipper: CircleClipper(),
                         child: Image.asset(
@@ -138,7 +70,6 @@ class _DisplayPageState extends State<DisplayPage> {
                           fit: BoxFit.fill,
                         ),
                       ),
-                    ),
                   ),
                 ),
               ),
