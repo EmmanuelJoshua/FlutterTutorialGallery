@@ -9,7 +9,9 @@ class _DBDemoState extends State<DBDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+
+      ),
     );
   }
 }
